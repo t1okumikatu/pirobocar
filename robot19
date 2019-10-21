@@ -1,0 +1,11 @@
+#define  E1  23                         
+#define  M1  22
+void setup() 
+{ 
+  pinMode( M1, OUTPUT);
+}
+void loop() 
+{ 
+  digitalWrite(M1,HIGH);        
+  analogWrite(E1, 125);   //PWM Speed Control
+}
