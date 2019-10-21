@@ -1,0 +1,25 @@
+import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM)
+
+led_pin = 27
+GPIO.setup(led_pin, GPIO.OUT)
+
+#GPIO.setwarnings(False) 
+
+led1 = GPIO.PWM(led_pin, 5) #50Hz
+led1.start(0)
+
+for loop in range(10):
+    for i in range(0,100,20):
+        led1.ChangeDutyCycle(i)
+        time.sleep(0.05)
+
+    for i in range(100,0,-20):
+        led1.ChangeDutyCycle(i)
+        time.sleep(0.05)
+        
+led1.stop()
+GPIO.cleanup()
+
