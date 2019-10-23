@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 import time
 
 COUNT = 10
-PIN = 23
+PIN = 18
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(PIN,GPIO.OUT)
 
